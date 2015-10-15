@@ -20,6 +20,7 @@ def initializeGraphics():
 
 
 # Prints all possible command-line arguments to the screen; also ends the execution of the software
+
 def usage():
 	print "\n\n\n"
 	print "Command-line usage help menu.\n"
@@ -39,6 +40,7 @@ def usage():
 
 
 # Checks for arguments at beginning of the execution of the main function
+# Severity has yet to be implemented, can either be removed or left as is untill implementation.
 def checkArgs():
 	try:
 		opts, args = getopt.getopt(sys.argv[1:], shortopts="vha:F:C:S:P:b:y:f:t:s:k:r", longopts=["verbose", "help", 
@@ -77,6 +79,7 @@ def checkArgs():
 		if o[0] in ("--verbose", "-v"):
 			verbose = True
 			print ("Verbose mode\n")
+	# Y for severity has yet to be implemented, can be ignored until it has been.
 	for o in opts:
 		if o[0] in ("--Folder", "-F"):
 			folder = str(o[1])
