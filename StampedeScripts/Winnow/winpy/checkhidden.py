@@ -13,7 +13,9 @@ def isHidden(filepath):
     name = os.path.basename(os.path.abspath(filepath))
     return name.startswith('.') or hasHiddenAttribute(filepath)
 
-
+"""
+Handles a variety of hidden files from different os's..etc.
+"""
 def hasHiddenAttribute(filepath):
     try:
         attrs = ctypes.windll.kernel32.GetFileAttributesW(unicode(filepath))
@@ -23,7 +25,9 @@ def hasHiddenAttribute(filepath):
         result = False
     return result
 
-
+"""
+Checklist populates a new list with all the fiels that are to not be hidden
+"""
 def checkList(check):
 	test = list()
 	for each in check:
